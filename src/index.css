@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@layer utilities {
+    .text-stroke1 {
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: rgba(255, 255, 255, 0.822);
+    }
+    .text-stroke2 {
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: rgba(255, 255, 255, 0.418);
+      }
+      .text-stroke3 {
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: rgba(255, 255, 255, 0.185);
+      }
+    
+    .text-stroke-sm {
+      -webkit-text-stroke-width: 1px;
+    }
+    .text-stroke-lg {
+      -webkit-text-stroke-width: 2px;
+    }
+  }
+
+  @layer base {
+    @font-face {
+      font-family: "NP";
+      src: url("/public/font/NightPumpkind-1GpGv.ttf") format("woff2");
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("/public//font/Inter-VariableFont_opsz\,wght.ttf") format("woff2");
+    }
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body{
+    background: #060704;
+    perspective: 200px;
+    color: #D3D9D4;
+  }
+  .container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+  }
+
+  .text {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .left {
+    left: 2%;
+    top: 30%;
+  }
+
+  .center {
+    left: 35%;
+    top: 25%;
+  }
+
+  .right {
+    right: 2%;
+    top: 30%;
+  }
+
+  .branding {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .corner {
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    font-size: 1rem;
+  }
+  .hidescrollbar{
+    scrollbar-color: green;
+  }
+
+  .drop-shadow{
+    text-shadow: 1px 0px 10px #f4ba31;
+  }
+  @keyframes bounce {
+    0%, 80%, 100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+  
+  #span1 {
+    animation: bounce 1.4s infinite;
+  }
+  
+  #span2 {
+    animation: bounce 1.4s infinite 0.2s;
+  }
+  
+  #span3 {
+    animation: bounce 1.4s infinite 0.4s;
+  }
+  
