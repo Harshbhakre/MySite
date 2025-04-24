@@ -13,14 +13,8 @@ import { Analytics } from "@vercel/analytics/react"
 
 
 const App = () => {
-  //   const cursorRef  = useRef()
+    const cursorRef  = useRef()
   const lenisRef = useRef()
-    const [mousepostionx, setMousepostionx] = useState()
-    const [mousepostiony, setMousepostiony] = useState()
-  const updateMousePostion = (e)=>{
-  setMousepostionx(e.clientX)
-  setMousepostiony(e.clientY)
-  }
 
   useEffect(() => {
     function update(time) {
@@ -35,7 +29,13 @@ const App = () => {
     <>
       <ReactLenis root>
       <Analytics/>
-      {/* <div ref={cursorRef} className="h-8 w-8 rounded-full absolute z-[50] top-0 bg-[#F4B931] opacity-0"></div> */}
+      {/* <div onMouseMove={(e)=>{
+        gsap.to(cursorRef.current, {x: e.clientX, y: e.clientY, duration: 0.5, ease: "elastic.out(1, 0.9)"});
+      }} className="relative">
+
+      <div ref={cursorRef} className="h-15 w-15 rounded-full absolute top-0 flex bg-[#F4B931] blur-lg">
+        <div className="h-1/2 w-full bg-white z-10 rounded-full" />
+      </div> */}
       <Navbar />
       <HomePage />
       <Projects />
@@ -45,7 +45,8 @@ const App = () => {
       <About />
       <Contact />
       <Footer />
-   
+{/*    
+      </div> */}
       </ReactLenis>
     </>
   );

@@ -90,24 +90,18 @@
   .drop-shadow{
     text-shadow: 1px 0px 10px #f4ba31;
   }
-  @keyframes bounce {
-    0%, 80%, 100% {
-      transform: scale(0);
+  @keyframes leading {
+    0% {
+      letter-spacing: -0.05em; /* similar to Tailwind's 'tracking-tighter' */
     }
-    40% {
-      transform: scale(1);
+    50% {
+      letter-spacing: 0em; /* equivalent to 'tracking-normal' */
+    }
+    100% {
+      letter-spacing: -0.05em;
     }
   }
-  
-  #span1 {
-    animation: bounce 1.4s infinite;
-  }
-  
-  #span2 {
-    animation: bounce 1.4s infinite 0.2s;
-  }
-  
-  #span3 {
-    animation: bounce 1.4s infinite 0.4s;
+  .animated-text2 {
+    animation: leading 2s infinite ease-in-out;
   }
   

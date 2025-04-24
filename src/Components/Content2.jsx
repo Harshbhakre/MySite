@@ -8,7 +8,7 @@ import gsap from "gsap";
 const Content2 = () => {
   const canvasRef = useRef(null);
   const yellowAnimationRef = useRef();
-  const headinganimation = useRef();
+  const heyheadinganimation = useRef(null);
   const [Loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -99,7 +99,23 @@ const Content2 = () => {
     };
     setLoading(false)
   }, []);
-
+  useGSAP(()=>{
+    gsap.to(heyheadinganimation.current, {
+      letterSpacing: "0em",
+      duration: 1,
+      ease: "power1.inOut",
+      yoyo: true,
+      repeat: -1, // infinite
+    });
+  gsap.from(".animated-text", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 0.5,
+      ease: "power3.out",
+      stagger: 1,
+    });
+  })
 
   return (
     <div className="h-200 w-full flex justify-center items-center z-0 ">
@@ -127,28 +143,23 @@ const Content2 = () => {
       </h1>
       </div>}
       {/* <div ref={yellowAnimationRef} className="h-[50vw] w-full absolute z-[50] top-0 bg-[#F4B931]"></div> */}
-      <div  className="h-150 w-230 text-[#D3D9D4] pl-20 py-15  leading-20 flex flex-col ">
+      <div  className="h-150 w-230 text-[#D3D9D4] pl-20 pt-40 leading-20 flex flex-col ">
         <h1 
           id="heading"
-          className="text-[15vw] h-max leading-25 tracking-tighter cursor-pointer"
+          className="leading-12  h-max tracking-tight cursor-pointer"
         >
-          <span className="hover:tracking-normal duration-900 transition-all">
-            I am
+          <span ref={heyheadinganimation} className="text-[10vw]">
+            Hey!
           </span>{" "}
           <br />{" "}
-          <span className="text-[#F4B931] hover:tracking-normal duration-900 transition-all whitespace-nowrap">
-            Web
-          </span>
-          <br />
-          <span>
-          DevloPer
+          <span className="animated-text text-[4.8vw] ml-2 mr-10 text-[#F4B931] whitespace-nowrap">
+          Looking for a Web Developer?
           </span>
         </h1>
-        <p className="text-xl font-extralight mt-12 mx-4 ">
-          Passionate web developer crafting dynamic, user-friendly applications
-          with modern frameworks.
+        <p className="text-xl font-extralight mt-4 mx-4 animated-text">
+        You've just landed at the right place. I craft dynamic, user-friendly web apps using modern frameworks.
         </p>
-        <a href=""></a>
+        {/* <a href=""></a> */}
       </div>
       <div className=" h-150 w-100 relative mr-30">
         <canvas ref={canvasRef} className="w-full h-full"></canvas>  

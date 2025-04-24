@@ -12,7 +12,7 @@ import Links from "../assets/Socialmedialinks";
 const HomePage = () => {
   const Aboutarrow = useRef()
   gsap.registerPlugin(ScrollTrigger);
-  const homepageAnimationRef = useRef();
+  const hometitleAnimations = useRef();
 
   useGSAP(()=>{
     gsap.to(Aboutarrow.current, {
@@ -22,15 +22,15 @@ const HomePage = () => {
       yoyo: true,
       ease: "power1.inOut",
     })
+
   })
 
   return (
     <><div className="" id="home">
       <div
-        ref={homepageAnimationRef}
-        className='rounded-none h-screen w-full flex flex-col bg-black font-bold text-[13vw] font-["Newake Demo"] leading-38 overflow-hidden'
+        className='rounded-none h-screen w-full flex flex-col  font-bold text-[13vw] leading-38 overflow-hidden'
         >
-        <div className="h-10 w-full mt-10 text-sm flex justify-between items-center px-22 z-[10]">
+        <div className="h-10 w-full text-sm flex justify-between items-center px-22 z-[10]">
           <nav className="flex gap-6 ">
             <a
               href={Links[1].url}

@@ -106,8 +106,8 @@ const Projects = ({ mousepostionx, mousepostiony }) => {
       ref={ProjectpageAnimationRef}
       className="h-screen w-full flex flex-col items-start overflow-x-hidden px-10 text-[#D3D9D4] "
     >
-      <div className="flex items-baseline gap-x-10 relative w-full">
-      <div  ref={clickmeRef} className="absolute h-30 -right-30 top-8 after:content-['Click_that'] after:block after:text-center after:-mt-4">
+      <div className="flex items-baseline gap-x-10 relative w-full mb-5 font-mono">
+      <div  ref={clickmeRef} className="absolute h-30 -right-30 top-8 after:content-['Wanna_see_magic?'] after:block after:absolute after:text-center after:-mt-4">
   <img
    
     src="/public/imgs/mario.png"
